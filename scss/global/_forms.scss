@@ -1,0 +1,117 @@
+input,
+textarea {
+	/*background-color: $blue;
+	box-shadow: none;
+	border: none;
+	color: $white;*/
+	font-size: 18px !important;
+	font-weight: 700 !important;
+	height: auto  !important;
+	letter-spacing: .05em;
+	line-height: 1;
+	padding: 18px 25px !important;
+	//text-transform: uppercase;
+
+	@include breakpoint(xlarge) {
+		font-size: 20px !important;
+	}
+}
+
+.wppb-user-forms {
+	margin-bottom: 40px;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	p.form-submit,
+	p.login-submit {
+		margin: 20px 0 0;
+	}
+
+	input {
+		/*background-color: $blue;
+		box-shadow: none;
+		border: none;
+		color: $white;*/
+		font-size: 18px;
+		font-weight: 700;
+		height: auto  !important;
+		letter-spacing: .05em;
+		line-height: 1;
+		padding: 18px;
+		//text-transform: uppercase;
+
+		@include breakpoint(xlarge) {
+			font-size: 20px;
+		}
+	}
+
+	label {
+		display: none;
+	}
+
+	&.wppb-send-credentials-checkbox {
+		label {
+			color: $blue-light;
+			display: block;
+			font-size: 16px;
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+
+			margin-bottom: 20px;
+
+			&:last-child  {
+				margin-bottom: 0;
+			}
+		}
+
+
+	}
+}
+
+#wpaloginform{
+  p{
+    color: $white;
+    .activity-theme &{
+      color: $darkblue;
+    }
+    label{
+      color: inherit;
+      font-size: $fs-15;
+      margin: -1rem 0 1rem;
+      //padding: 0 0 0 $fs-30;
+    }
+  }
+  [type="text"]{
+    color: $white !important;
+  }
+  #user_email_username{
+    width: 100%;
+  }
+  #wpa-submit{
+    width: auto;
+    max-width: 100%;
+    background-color: $blue-alt;
+    &:hover, &:focus{
+      background-color: darken($blue-alt, 5);
+    }
+  }
+  .ultimatetag &{
+    p{
+      color: $ultimateblack;
+    }
+    #wpa-submit{
+      background-color: $ultimatered;
+      &:hover, &:focus{
+        background-color: darken($ultimatered, 5);
+      }
+    }
+  }
+}

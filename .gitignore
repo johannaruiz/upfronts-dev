@@ -1,0 +1,12 @@
+.DS_Store
+bower_components
+node_modules
+npm-debug.log
+css
+style.css
+style.css.map
+_notes.md
+_api.md
+js/plugin.js
+js/crypto.js
+js/base64.js

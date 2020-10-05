@@ -1,0 +1,76 @@
+.chat-column {
+	@include breakpoint(medium) {
+		position: relative;
+    height: 0;
+    padding-bottom: 31.25%;
+    //overflow: hidden;
+		.event-chat-copy{
+			position: absolute;
+			top: -1.875rem;
+			left: 0;
+			font-weight: 500;
+			width: 100%;
+			text-align: center;
+		}
+		.expanded &{
+			padding-bottom: 36.25%;
+		}
+	}
+
+	@include breakpoint(large) {
+		padding-bottom: 36%;
+		.expanded &{
+			padding-bottom: 41%;
+		}
+	}
+
+
+	.arena-chat {
+		@include breakpoint(medium) {
+			position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		}
+
+		#chat-room-input-gif--gifs {
+			height: 150px !important;
+		}
+
+		.emoji-mart-search-icon {
+			font-size: 16px !important;
+			padding: 2px 5px 1px !important;
+		}
+
+		.emoji-mart .emoji-mart-emoji {
+			padding: 6px !important;
+		}
+
+		h4 {
+			color: $blue;
+			font-size: 1rem;
+			text-align: center;
+		}
+
+		.live-chat-room-input--input--wrapper .react-input-emoji--button {
+			padding: 0 !important;
+		}
+
+		.jYKpTa {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+
+		.live-chat-room--input {
+
+			input {
+				background-color: $white;
+				height: 32px !important;
+				margin-bottom: 0;
+				padding: 0px 30px 0px 10px !important;
+			}
+		}
+	}
+}

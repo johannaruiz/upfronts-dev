@@ -1,0 +1,93 @@
+
+
+//Typograhpy styles live here
+//Font Sizes
+$fs-8: 0.5em;
+$fs-9: 0.5625em;
+$fs-10: 0.625em;
+$fs-11: 0.6875em;;
+$fs-12: 0.75em;
+$fs-12h: 0.7875em;
+$fs-13: 0.8125em;
+$fs-14: 0.875em;
+$fs-15: 0.9375rem;
+$fs-16: 1em;
+$fs-17: 1.0625em;
+$fs-18: 1.125em;
+$fs-19: 1.1875em;
+$fs-20: 1.25em;
+$fs-22: 1.375em;
+$fs-24: 1.5em;
+$fs-26: 1.625em;
+$fs-28: 1.75em;
+$fs-30: 1.875em;
+$fs-32: 2em;
+$fs-34: 2.125em;
+$fs-35: 2.1875em;
+$fs-36: 2.25em;
+$fs-40: 2.5em;
+$fs-44: 2.75em;
+$fs-46: 2.875em;
+$fs-48: 3em;
+$fs-50: 3.125em;
+$fs-51: 3.1875em;
+$fs-52: 3.25em;
+$fs-60: 3.75em;
+$fs-75: 4.6875em;
+$fs-80: 5em;
+$fs-83: 5.1875em;
+$fs-84: 5.25em;
+$fs-96: 6em;
+
+$sans-serif: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$serif: 'Georgia', Times, "Times New Roman", serif;
+
+@font-face {
+  font-family: 'Varsity-Team-Bold';
+    src:  url('/wp-content/themes/foxupfronts/includes/assets/fonts/Varsity-Team-Bold.ttf.woff') format('woff'),
+    url('/wp-content/themes/foxupfronts/includes/assets/fonts/Varsity-Team-Bold.ttf.svg#Varsity-Team-Bold') format('svg'),
+    url('/wp-content/themes/foxupfronts/includes/assets/fonts/Varsity-Team-Bold.ttf.eot'),
+    url('/wp-content/themes/foxupfronts/includes/assets/fonts/Varsity-Team-Bold.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.varsity{
+  font-family: 'Varsity-Team-Bold';
+}
+//Font Mixins
+@mixin sans-serif($color, $font-size, $font-style, $font-weight, $line-height, $letter-spacing:null, $text-decoration:null, $text-shadow:null, $text-transform:null) {
+  color: $color;
+  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-size: $font-size;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-decoration: $text-decoration;
+  text-shadow: $text-shadow;
+  text-transform: $text-transform;
+}
+
+@mixin serif($color, $font-size, $font-style, $font-weight, $line-height, $letter-spacing:null, $text-decoration:null, $text-shadow:null, $text-transform:null) {
+  color: $color;
+  font-family: 'Georgia', Times, "Times New Roman", serif;
+  font-size: $font-size;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-decoration: $text-decoration;
+  text-shadow: $text-shadow;
+  text-transform: $text-transform;
+}
+
+.button,
+button {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: .05em;
+	margin-bottom: 0;
+	padding: 27px 35px !important;
+	text-transform: uppercase;
+}

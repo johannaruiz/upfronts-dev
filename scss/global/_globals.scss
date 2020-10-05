@@ -1,0 +1,579 @@
+// Update to be relevant for the client.
+// Useage e.g. #{$d}your-class-name{ }
+$b: ".bnc-";
+
+html {
+	box-sizing: border-box;
+	> *, > *:before, > *:after {
+		box-sizing: inherit;
+	}
+	overflow-x: hidden;
+	//font-size: 62.5%; //Uncomment if you want to role with base 10 and use the font-size mixin
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+		position: relative;
+	}
+}
+q, blockquote{
+	quotes: "\201C" "\201D" "\2018" "\2019";
+}
+audio, video{
+	display: block;
+	width: 100%;
+	&::-internal-media-controls-download-button{
+		display:none;
+	}
+	&::-webkit-media-controls-enclosure{
+		overflow:hidden;
+	}
+	&::-webkit-media-controls-panel{
+		width: calc(100% + 30px);
+	}
+}
+
+html {
+	height: 100%;
+	margin-top: 0 !important;
+}
+
+body {
+	background-color: transparent;
+	min-height: 100%;
+	position: relative;
+  background-image: url('includes/assets/images/background.svg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+  &.home{
+    background-image: url('includes/assets/images/background-home.svg');
+  }
+	@include breakpoint(small only) {
+  		position: static !important;
+  	}
+}
+
+.background-container {
+	height: 100vh;
+	position: fixed;
+	width: 100%;
+	z-index: -1;
+
+	svg {
+		height: 110%;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		width: 100%;
+	}
+}
+
+.edit-link{
+	position: fixed;
+	bottom: 1.875rem;
+	right: 1.875rem;
+	a{
+		margin: 0;
+	}
+}
+
+main  {
+	@include breakpoint(medium){
+    min-height: calc(100vh - 100px);
+  }
+	width: 100%;
+  .activity-theme &{
+    padding-top: 40px;
+  }
+	@include breakpoint(medium) {
+		align-items: center;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		justify-content: center;
+	}
+  @include breakpoint(medium) {
+			padding-top: 40px;
+      .activity-theme &{
+        padding-top: 145px;
+      }
+		}
+
+		@include breakpoint(large) {
+			padding-top: 60px;
+      .activity-theme &{
+        padding-top: 160px;
+      }
+		}
+
+		@include breakpoint(xlarge) {
+			padding-top: 75px;
+      .activity-theme &{
+        padding-top: 160px;
+      }
+		}
+
+	> div.page,
+	> div.live-event {
+		width: 100%;
+	}
+}
+
+.home {
+	.row {
+		max-width: 1250px;
+		&.expanded{
+			max-width: 1400px;
+		}
+	}
+}
+.activity-theme{
+  .row{
+    max-width: 1350px;
+  }
+}
+
+// Uncomment the lines below if you would
+// like to modify the word wrapping of p tags.
+p{
+	//word-wrap: break-word;
+	//word-break: break-word;
+	//overflow-wrap: break-word;
+	//hyphens: auto;
+}
+
+.page-content  {
+	.content-container {
+		background: transparent;
+		filter: drop-shadow(10px 10px 25px rgba(0, 0, 0, 0.11));
+		/* Note: currently only Safari supports backdrop-filter */
+		backdrop-filter: blur(30px);
+		--webkit-backdrop-filter: blur(30px);
+		background-color: rgba(255, 255, 255, 0.15);
+		padding: 20px;
+		width: 100%;
+    $loginblue: #3B6D9E;
+    .pilights &{
+      background-color: rgba($loginblue, 1);
+    }
+    .ultimatetag &{
+      background-color: $ultimategray;
+      color: $ultimateblack;
+    }
+		@include breakpoint(medium) {
+			padding: 40px;
+		}
+
+		@include breakpoint(large) {
+			padding: 60px;
+		}
+
+		@include breakpoint(xlarge) {
+			padding: 75px;
+		}
+
+		.page-content-padding {
+			padding-left: 30px;
+		}
+    h2{
+      .activity-theme &{
+        color: $darkblue;
+      }
+    }
+    p{
+      .activity-theme &{
+        color: $darkblue;
+      }
+    }
+		a  {
+			color: $blue-light;
+			font-weight: 700;
+			letter-spacing: .05em;
+			text-decoration: underline;
+			text-transform: uppercase;
+      display: inline-block;
+      padding-left: 0 !important;
+      .activity-theme &{
+        color: $darkblue;
+      }
+      .pilights &{
+        color: $white;
+      }
+      .ultimatetag &{
+        color: $ultimateblack;
+      }
+		}
+
+		h1,h2,h3,h4,h5,h6 {
+			font-size: 20px;
+			font-weight: 800;
+			letter-spacing: .05em;
+			margin-bottom: 40px;
+			//  padding-left: 30px;
+			text-transform: uppercase;
+		}
+
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.responsive-embed{
+	margin: 0;
+}
+
+.reveal  {
+  border: none;
+  .ultimatetag &{
+    background-color: $ultimategray;
+  }
+	@include breakpoint(medium) {
+		padding: 30px;
+	}
+
+	@include breakpoint(large) {
+		padding: 40px 80px;
+	}
+
+	@include breakpoint(xxlarge) {
+		padding: 50px 90px;
+	}
+	h1,h2,h3,h4,h5,h6,p{
+		color: $blue;
+		font-size: 20px;
+		font-weight: 800;
+		letter-spacing: .05em;
+		margin-bottom: 15px;
+		text-align: center;
+		text-transform: uppercase;
+
+		@include breakpoint(xxlarge) {
+			font-size: 30px;
+			margin-bottom: 30px;
+		}
+    .pilights &{
+      color: #3B6D9E;
+    }
+    .ultimatetag &{
+      color: $ultimateblack;
+    }
+	}
+  .assistance-intro{
+    color: $blue;
+    font-size: $fs-15;
+    font-weight: 800;
+    letter-spacing: .05em;
+    margin-bottom: 15px;
+    text-align: center;
+    max-width: 85%;
+    margin: 0 auto $fs-30;
+    a{
+      text-decoration: underline;
+    }
+    @media screen and (max-width: 450px){
+      font-size: $fs-14;
+    }
+    .pilights &{
+      color: #3B6D9E;
+    }
+    .ultimatetag &{
+      color: $ultimateblack;
+    }
+  }
+  input, textarea{
+    .pilights &{
+      background-color: #3B6D9E !important;
+    }
+    .ultimatetag &{
+      background-color: $white !important;
+    }
+  }
+  input[type=submit]{
+    .pilights &{
+      background-color: #EC6624 !important;
+    }
+    .ultimatetag &{
+      background-color: $ultimatered !important;
+    }
+  }
+  a{
+    .pilights &{
+      color: #3B6D9E !important;
+    }
+    .ultimatetag &{
+      color: $ultimateblack !important;
+    }
+  }
+}
+
+#gform_confirmation_wrapper_1{
+  #gform_confirmation_message_1{
+    font-weight: 700;
+    font-size: $fs-18;
+    text-align: center;
+    .pilights &{
+      color: #3B6D9E;
+    }
+    .ultimatetag &{
+      color: $ultimateblack;
+    }
+  }
+}
+
+.row {
+  padding: 20px 0;
+  @include breakpoint(medium) {
+    padding: 40px 25px;
+  }
+  @include breakpoint(xxlarge) {
+    padding: 40px 0;
+  }
+  &.download-content{
+    padding: 20px 0;
+    @include breakpoint(xxlarge) {
+      padding: 40px 25px 80px;
+    }
+    @include breakpoint(xxlarge) {
+      padding: 40px 0 80px;
+    }
+    .button{
+      + .button{
+
+      }
+    }
+  }
+}
+
+.home{
+  main{
+    .row{
+      @include breakpoint(medium) {
+        padding: 80px 25px;
+      }
+      @include breakpoint(xxlarge) {
+        padding: 120px 0;
+      }
+    }
+  }
+  &.activity-theme{
+    main{
+      .row{
+        &:first-of-type{
+          @include breakpoint(medium) {
+            padding: 80px 30px;
+          }
+          @include breakpoint(xxlarge) {
+            padding: 80px 0 60px;
+          }
+        }
+        &:last-of-type{
+          padding: 0 0 0;
+        }
+      }
+    }
+  }
+}
+.row{
+  max-width: 1200px;
+}
+
+
+.event-sidebar{
+	span{
+		display: block;
+		line-height: 1;
+		font-size: 18px;
+		margin: 0 0 30px;
+
+		em{
+			display: inline-block;
+			font-style: normal;
+			text-transform: uppercase;
+			padding: 12px 38px;
+		}
+		&.off-air{
+			em{
+				background: transparent;
+				filter: drop-shadow(10px 10px 25px rgba(0, 0, 0, 0.11));
+				/* Note: currently only Safari supports backdrop-filter */
+				backdrop-filter: blur(30px);
+				--webkit-backdrop-filter: blur(30px);
+				background-color: rgba(255, 255, 255, 0.15);
+			}
+		}
+		&.on-air{
+			em{
+				background: transparent;
+				filter: drop-shadow(10px 10px 25px rgba(0, 0, 0, 0.5));
+				/* Note: currently only Safari supports backdrop-filter */
+				backdrop-filter: blur(30px);
+				--webkit-backdrop-filter: blur(30px);
+				background-color: rgba(255, 255, 255, 0.5);
+			}
+		}
+	}
+
+	#fox-logo {
+		max-width: 194px;
+		margin-bottom: 30px;
+	}
+	h1{
+		font-size: 32px;
+		line-height: 1.2;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		@include breakpoint(large) {
+			font-size: 40px
+		}
+
+		@include breakpoint(xlarge) {
+			font-size: 44px;
+		}
+
+	}
+	p{
+		font-size: 20px;
+	}
+  img{
+    width: 100%;
+  }
+}
+
+#svg-background {
+	.background {
+		fill: #0A4777;
+	}
+
+	.foreground {
+		fill: #032E57;
+	}
+}
+
+.login-password{
+  //opacity: 0;
+}
+
+.wpa-alert{
+  background-color: $chillipepper !important;
+  color: $white;
+  border: 1px solid $white !important;
+  a{
+    color: inherit !important;
+  }
+}
+.wpa-success{
+  background-color: $emerald !important;
+  color: $white;
+  border: 1px solid $white !important;
+  a{
+    color: inherit !important;
+  }
+}
+
+.close-button{
+  padding: 0 !important;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span{
+    transform: translateY(-.25rem);
+  }
+  .roadtothewhitehouse &{
+    color: $white;
+    &:hover, &:focus, &:active{
+      color: $white;
+    }
+  }
+}
+
+.activity-content-divider{
+  background-color: $darkblue;
+  text-align: center;
+  color: $white;
+  margin: 0 0 60px 0;
+  .row{
+    padding: $fs-30 0 !important;
+  }
+  h2{
+    color: inherit;
+    margin: 0;
+  }
+}
+
+.show-box{
+  margin-bottom: $fs-30;
+  color: $darkblue;
+  .show-box-content{
+    padding: $fs-20 0 $fs-20;
+  }
+  a{
+    display: block;
+    overflow: hidden;
+    img{
+      transition: transform 0.2s linear;
+    }
+    &:hover{
+      img{
+        transform: scale(1.05);
+      }
+    }
+  }
+  span{
+    display: block;
+    font-size: $fs-14;
+    //font-size: $fs-30;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0 0 0.46875rem;
+    text-transform: uppercase;
+  }
+  p{
+    font-size: $fs-17;
+  }
+}
+
+.activity-intro-copy{
+  padding: 30px 0 0;
+  color: $darkblue;
+  h1{
+    text-align: center;
+    font-weight: 500;
+  }
+  .presenter{
+    font-size: $fs-18;
+    font-weight: 500;
+    margin: 0 0 0.46875rem;
+  }
+  p:not(.presenter){
+    font-size: $fs-24;
+    + p:not(.presenter){
+      .home &{
+        margin: 1.875rem auto 0;
+        max-width: 85%;
+      }
+    }
+    .home &{
+      font-size: $fs-24;
+      max-width: 85%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+iframe{
+  border: none;
+}
+
+#wpadminbar input {
+	background-color: transparent !important;
+	max-height: 32px !important;
+	padding: 0 !important;
+}

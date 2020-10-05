@@ -1,0 +1,502 @@
+.gform_wrapper {
+  margin: 0px auto;
+  .gform_footer {
+    margin-top: 0;
+    padding: 0;
+  }
+  ul.gform_fields {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    &:after {
+      clear: both;
+      content:"";
+      display: block;
+    }
+    li.gfield {
+      margin-top: 0;
+      padding: 0 0 20px !important;
+
+      &.gform_hidden {
+        padding: 0 !important;
+      }
+
+      &.half {
+        clear: none;
+        @include breakpoint(medium) {
+          float: left;
+          margin: 0 0 0 4% !important;
+          width: 48%;
+        }
+      }
+
+      &.third {
+        clear: none;
+        @include breakpoint(medium) {
+          float: left;
+          margin: 0 0 0 4% !important;
+          width: 30.6667%;
+        }
+      }
+
+      &.first {
+        margin-left: 0 !important;
+        clear: both;
+      }
+
+      &.gfield_error {
+        input {
+          border-color: $ultraviolet;
+        }
+
+        .validation_message {
+          font-size: 13px;
+          font-style: italic;
+          font-weight: 500;
+          line-height: 15px;
+          margin-left: 8px;
+          margin-top: 5px;
+        }
+
+        .gfield_checkbox,
+        .gfield_radio {
+          label {
+            &:before {
+              border-color: $ultraviolet;
+            }
+          }
+        }
+      }
+
+      &.hide-label {
+        label.gfield_label {
+          display: none !important;
+        }
+      }
+      &.gform_validation_container {
+        display: none;
+      }
+
+      &.gform_hidden {
+        padding: 0 !important;
+      }
+    }
+
+    .gf_clear {
+      clear: both;
+    }
+
+    .ginput_complex {
+      label {
+        font-style: italic;
+        font-weight: normal;
+        margin-bottom: 15px;
+        margin-left: 8px;
+        margin-top: 5px;
+        text-transform: none;
+      }
+
+      .address_city,
+      .address_state,
+      .address_zip {
+        @include breakpoint(medium) {
+          clear: none;
+          float: left;
+          margin-left: 4%;
+          width: 30.6667%;
+        }
+      }
+
+      .address_city {
+        @include breakpoint(medium) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    input,select {
+      margin-bottom: 0;
+    }
+
+    .instruction {
+      font-size: 13px;
+      font-style: italic;
+      font-weight: normal;
+      line-height: 15px;
+      margin-bottom: 15px;
+      margin-left: 8px;
+      margin-top: 5px;
+      text-transform: none;
+    }
+
+    textarea.medium {
+      height: 150px;
+    }
+
+    textarea.small {
+      height: 90px;
+    }
+
+    ul.gfield_checkbox,
+    ul.gfield_radio {
+      list-style: none;
+      margin:0;
+      padding: 0;
+
+      @include breakpoint(medium) {
+        align-items: center;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      li {
+        @include breakpoint(medium) {
+          flex: 0 0 48%;
+          margin-right: 2%;
+        }
+        @include breakpoint(large) {
+          flex: 0 0 23%;
+        }
+      }
+
+      input {
+        margin: 0;
+        opacity: 0;
+        position: absolute;
+
+        &[value=Other] {
+          opacity: 1;
+          position: static;
+        }
+      }
+
+      label {
+        align-items: center;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        font-weight: 500;
+        left: 0;
+        margin: 0;
+        min-height: 28px;
+        padding-left: 35px;
+        position: relative;
+        text-transform: none;
+
+        &:after {
+          background-color: $ultraviolet;
+          content: none;
+          display: inline-block;
+          height: 16px;
+          left: 4px;
+          position: absolute;
+          top: 4px;
+          width: 16px;
+        }
+
+        &:before {
+          border: 2px solid $ultraviolet;
+          content: "";
+          display: inline-block;
+          height: 24px;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 24px;
+        }
+      }
+      input:checked + label::after {
+        content: "";
+      }
+
+      input:focus + label::before {
+        box-shadow: 0 0 5px #cacaca;
+      }
+
+
+      &.gfield_radio {
+        label {
+          &:after {
+            border-radius:12px;
+          }
+          &:before {
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+
+	&.hide-labels_wrapper {
+
+		ul.gform_fields {
+
+			li.gfield {
+	            padding: 0 0 20px !important;
+
+				&.third {
+	                @include breakpoint(medium) {
+	                    margin: 0 0 0 2.5% !important;
+	                    width: 31.667%;
+	                }
+
+					&:first-child {
+						margin: 0 !important;
+					}
+	            }
+
+				&.gform_hidden {
+					padding: 0 !important;
+				}
+			}
+
+			label {
+				display: none !important;
+			}
+		}
+
+		.gform_footer {
+			text-align: center;
+
+			.button {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+  .gf_page_steps {
+    margin-bottom: 20px;
+
+    @include breakpoint(large) {
+      margin-bottom: 40px;
+    }
+
+    @include breakpoint(medium) {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .gf_step {
+      align-items: center;
+      color: $ultraviolet;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      margin-bottom: 10px;
+
+      @include breakpoint(medium) {
+        font-size: 14px;
+        margin-right: 15px;
+      }
+
+      @include breakpoint(xlarge) {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+
+      &.gf_step_last {
+        @include breakpoint(medium) {
+          margin-right: 0;
+        }
+      }
+
+      .gf_step_label {
+        line-height: 1.2em;
+      }
+      .gf_step_number {
+        background-color: $ultraviolet;
+        border-radius: 36px;
+        display: block;
+        line-height: 1;
+        margin-right: 5px;
+        min-width: 36px;
+        padding: 10px;
+        text-align: center;
+      }
+
+      &.gf_step_active {
+        color: $ultraviolet;
+        font-weight: 600;
+
+        .gf_step_label {
+
+        }
+        .gf_step_number {
+          background-color: $ultraviolet;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .validation_error {
+    background-color: $ultraviolet;
+    border-bottom: 2px solid $black !important;
+    color: $white !important;
+    font-weight: 700;
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+.ui-datepicker {
+  background-color: $white;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 10px 0 rgba($black,.1);
+  box-shadow: 3px 3px 10px 0 rgba($black,.1);
+  overflow: hidden;
+  .ui-datepicker-calendar {
+    margin-bottom: 0;
+
+  tbody {
+    background-color: $white;
+    border: none;
+    color: $black;
+
+    tr {
+      background-color: transparent;
+      td {
+        font-weight: 500;
+        padding: 0;
+        text-align: center;
+
+        &:first-child {
+          padding-left: 22px;
+        }
+
+        &:last-child {
+          padding-right: 22px;
+        }
+
+      a {
+        border-radius: 30px;
+        color: $black;
+        display:block;
+        min-width:40px;
+        padding: 8px 6px;
+
+        &:hover,
+        &:focus {
+          background-color: $grey;
+        }
+
+        &.ui-state-active {
+          background-color: $ultraviolet;
+          color: $white;
+        }
+      }
+    }
+
+    &:first-child {
+      td {
+        padding-top: 22px;
+      }
+    }
+
+      &:last-child {
+        td {
+          padding-bottom: 22px;
+        }
+      }
+    }
+  }
+
+  thead {
+    background-color: $ultraviolet;
+    border: none;
+    color: $white;
+      tr {
+        th {
+          font-family: $sans-serif;
+          padding-bottom: 12px;
+          text-align: center;
+          &:first-child {
+            padding-left: 22px;
+          }
+          &:last-child {
+            padding-right: 22px;
+          }
+        }
+      }
+    }
+  }
+
+  .ui-datepicker-header {
+    background-color: $ultraviolet;
+    color: $white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 15px 25px 5px;
+
+    a {
+      color: $white;
+      line-height: 1;
+
+      &:after {
+        content: "\f054";
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+      }
+
+      span {
+        display: none;
+      }
+
+      &.ui-datepicker-prev {
+        order: 1;
+
+        &:after {
+          content: "\f053";
+        }
+      }
+
+      &.ui-datepicker-next {
+        order: 3;
+      }
+    }
+
+    .ui-datepicker-title {
+      align-items: center;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: space-between;
+      flex: 0 1 auto;
+      padding: 0 20px;
+      order: 2;
+
+      select,
+      select:focus {
+        background: $ultraviolet !important;
+        border: none !important;
+        color: $white !important;
+        font-family: $sans-serif;
+        font-size: 30px;
+        margin-bottom: 0;
+        min-width: 60px;
+        padding: 0px !important;
+        text-align: center;
+        option {
+          font-size: 18px !important;
+        }
+      }
+    }
+  }
+}
+
+.gform_wrapper.hide-labels_wrapper ul.gform_fields label{
+  display: none;
+}
+.gform_wrapper .hidden_label .gfield_label{
+  clip: rect(1px,1px,1px,1px);
+  position: absolute!important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}

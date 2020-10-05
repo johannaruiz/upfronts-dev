@@ -1,0 +1,40 @@
+footer{
+  font-size: $fs-11;
+  margin: $fs-15 0 0;
+  .row{
+    padding: $fs-15 0;
+  }
+  p{
+    font-size: inherit;
+    @include breakpoint(medium){
+      max-width: 85%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .activity-theme &{
+      color: $darkblue;
+    }
+    + p{
+      margin: $fs-15 auto 0;
+      @include breakpoint(medium){
+        max-width: 70%;
+      }
+    }
+  }
+  a{
+    color: $white;
+    text-decoration: underline;
+    .activity-theme &{
+      color: $darkblue;
+    }
+    &:visited, &:active, &:hover, &:focus{
+      color: $white;
+      .activity-theme &{
+        color: $darkblue;
+      }
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}

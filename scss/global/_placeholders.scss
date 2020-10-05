@@ -1,0 +1,34 @@
+//Neat little extras live here
+.ultimatetag{
+  input:not([type="submit"]), textarea{
+    background-color: $white;
+    color: $ultimateblack;
+  }
+  ::-webkit-input-placeholder {
+    color: $ultimateblack !important;
+  //@include sans-serif(rgba($black, 1) !important, 14px, normal, 400, 1.5, normal);
+  }
+
+  :-moz-placeholder {
+    color: $ultimateblack !important;
+  //@include sans-serif(rgba($black, 1) !important, 14px, normal, 400, 1.5, normal);
+  }
+
+  ::-moz-placholder{
+    color: $ultimateblack !important;
+  //@include sans-serif(rgba($black, 1) !important, 14px, normal, 400, 1.5, normal);
+  }
+
+  ::-ms-input-placeholder {
+    color: $ultimateblack !important;
+  //@include sans-serif(rgba($black, 1) !important, 14px, normal, 400, 1.5, normal);
+  }
+
+  ::input-placeholder {
+    color: $ultimateblack !important;
+  //@include sans-serif(rgba($black, 1) !important, 14px, normal, 400, 1.5, normal);
+  }
+  .button{
+    background-color: $ultimatered;
+  }
+}

@@ -1,0 +1,174 @@
+	header {
+		background-color: $blue-alt;
+		width: 100%;
+    .activity-theme &{
+      background-color: rgba(255,255,255,1);
+    }
+    .pilights &{
+      $pilights: #3B6D9E;
+      background-color: rgba($pilights, 1);
+    }
+    .ultimatetag &{
+      background-color: $ultimategray;
+    }
+		@include breakpoint(medium) {
+			background: transparent;
+			filter: drop-shadow(10px 10px 25px rgba(0, 0, 0, 0.11));
+			/* Note: currently only Safari supports backdrop-filter */
+			backdrop-filter: blur(30px);
+			--webkit-backdrop-filter: blur(30px);
+			background-color: rgba(255, 255, 255, 0.15);
+			position: absolute;
+			z-index: 999;
+      .activity-theme &{
+        background-color: rgba(255,255,255, 1);
+      }
+		}
+    &.thin-header{
+      .row{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @include breakpoint(medium){
+          padding-top: 14px;
+          padding-bottom: 14px;
+        }
+      }
+    }
+		.row {
+			padding-bottom: 20px;
+			padding-top: 20px;
+			@include breakpoint(xxlarge) {
+				padding-bottom: 29px;
+				padding-top: 29px;
+			}
+			.column {
+				&.flex-container {
+					@include breakpoint(small only) {
+						flex-wrap: wrap;
+					}
+				}
+				.event-title {
+          .pilights &{
+            display: none;
+          }
+          .ultimatetag &{
+            display: none;
+          }
+					@include breakpoint(small only) {
+						flex: 0 0 100%;
+						margin-top: 5px;
+					}
+
+					@include breakpoint(medium) {
+						//border-left: 2px solid $white;
+						margin-left: 20px;
+						padding-left: 15px;
+            .roadtothewhitehouse &{
+              padding-left: 0;
+            }
+					}
+
+					h1 {
+						font-weight: 800;
+						margin-bottom: 0;
+						text-transform: uppercase;
+            font-size: 14px;
+            @include breakpoint(medium){
+              font-size: $fs-14;
+            }
+            @include breakpoint(large){
+              font-size: $fs-16;
+            }
+            @include breakpoint(xlarge){
+              font-size: $fs-20;
+            }
+            img{
+              width: 100%;
+              max-width: 90%;
+            }
+					}
+          .activity-theme &{
+            flex-grow: 1;
+          }
+				}
+
+
+				img  {
+					max-width: 125px;
+          .pilights &{
+            width: 100%;
+            max-width: 300px;
+          }
+          .ultimatetag &{
+            width: 100%;
+            max-width: 300px;
+          }
+				}
+
+				.menu {
+					margin-top: 20px;
+
+					@include breakpoint(medium) {
+						align-items: center;
+						justify-content: flex-end;
+						height: 100%;
+						margin-top: 0;
+					}
+
+					li {
+						a {
+							color: $blue-light;
+							font-size: 14px;
+							letter-spacing: .05em;
+							//padding: 0;
+							text-transform: uppercase;
+              .activity-theme &{
+                color: $darkblue;
+              }
+              .pilights &{
+                color: $white;
+                font-weight: 500;
+              }
+              .ultimatetag &{
+                color: $ultimateblack;
+              }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.webconnected{
+		header{
+			.button{
+				position: absolute;
+				top: 0;
+				right: 0;
+				background-color: $black;
+				color: $white;
+				height: 100%;
+				width: 108px;
+				z-index: 5000;
+				i{
+					font-size: $fs-30;
+				}
+			}
+		}
+	}
+	#offCanvas{
+		background: transparent !important;
+	}
+	.off-canvas-navigation{
+		margin-top: 108px;
+		background-color: $black;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		padding: $fs-30 $fs-15 0;
+		.menu{
+			a{
+				color: $white;
+			}
+		}
+	}

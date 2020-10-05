@@ -1,0 +1,27 @@
+a {
+  @media print {
+    &[href]:after {
+      content: " (" attr(href) ")";
+    }
+    &[title]:after{
+      content: "(" attr(title) ")";
+    }
+  }
+}
+
+img {
+  @media print {
+    &[alt]:after {
+      content: " (" attr(alt) ")";
+    }
+    &[title]:after{
+      content: "(" attr(title) ")";
+    }
+  }
+}
+
+hr{
+  @media print {
+    display: none;
+  }
+}
